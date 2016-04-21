@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Oksana_Eryomenko on 4/21/2016.
  */
-interface UserDAO {
+public interface UserDAO {
 
     void add(User user);
     void delete(User user);

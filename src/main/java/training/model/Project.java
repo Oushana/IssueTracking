@@ -20,7 +20,7 @@ public class Project {
     private int projectId;
 
     @OneToMany
-    private List<User> users;
+    private List<User> users = new ArrayList<User>();;
 
     private String projectTitle;
     private String projectDescription;

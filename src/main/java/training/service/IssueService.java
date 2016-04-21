@@ -1,8 +1,11 @@
-package training.dao;
+package training.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import training.dao.IssueDAO;
+import training.dao.ProjectDAO;
+import training.dao.UserDAO;
 import training.model.Issue;
 import training.model.Project;
 import training.model.User;
