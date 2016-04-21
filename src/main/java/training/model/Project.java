@@ -19,7 +19,8 @@ public class Project {
     @GeneratedValue
     private int projectId;
 
-    private List <User> users = new ArrayList<User>();
+    @OneToMany
+    private List<User> users;
 
     private String projectTitle;
     private String projectDescription;
