@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="user" class="training.model.User">
+    <constructor-arg value="user1"></constructor-arg>
+    <constructor-arg value="Ivan"></constructor-arg>
+    <constructor-arg value="Petrov"></constructor-arg>
+    <constructor-arg value="aaa@bbb.com"></constructor-arg>
+</bean>
+
+<bean id="project" class="training.model.Project">
+    <constructor-arg value="SomeVeryBigProject"></constructor-arg>
+</bean>
+
+    <bean id="Issue" class="training.model.Issue">
+        <constructor-arg value="001"></constructor-arg>
+        <constructor-arg value="Issue1"></constructor-arg>
+    </bean>
+</beans>
