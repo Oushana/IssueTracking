@@ -34,11 +34,11 @@ public class Issue extends DomainObject {
 
 
 
-    public int getIssueReportedId() {
+    public int getIssueReporterId() {
         return issueReporterId;
     }
 
-    public void setIssueReportedId(int issueReportedId) {
+    public void setIssueReporterId(int issueReportedId) {
         this.issueReporterId = issueReportedId;
     }
 
