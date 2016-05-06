@@ -1,57 +1,45 @@
 package training.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
  * Created by Oksana_Eryomenko on 4/15/2016.
  */
-@Entity
-@Table(name="Issue")
-public class Issue {
 
-    @Id
-    @GeneratedValue
-    private int issueId;
+public class Issue extends DomainObject {
 
-    private int issueReportedId;
+    private int issueReporterId;
     private int issueAsigneeId;
 
     private String issueTitle;
     private String issueDescription;
     private String issueStatus;
-    private String issuePriority;
+    private IssuePriority issuePriority;
     private String issueSummary;
 
-    private Date issueCreationDate;
-    private Date issueTargetResolutionDate;
-    private Date issueActualResolutionDate;
-    private Date issueModifiedDate;
+    private LocalDateTime issueCreationDate;
+    private LocalDateTime issueTargetResolutionDate;
+    private LocalDateTime issueActualResolutionDate;
+    private LocalDateTime issueModifiedDate;
 
     public Issue(){}
 
-    public Issue(int issueReportedId, String issueTitle){
-        this.issueReportedId = issueReportedId;
+    public Issue(int issueReporterId, String issueTitle){
+        this.issueReporterId = issueReporterId;
         this.issueTitle = issueTitle;
     }
 
-    public int getIssueId() {
-        return issueId;
-    }
 
-    public void setIssueId(int issueId) {
-        this.issueId = issueId;
-    }
 
     public int getIssueReportedId() {
-        return issueReportedId;
+        return issueReporterId;
     }
 
     public void setIssueReportedId(int issueReportedId) {
-        this.issueReportedId = issueReportedId;
+        this.issueReporterId = issueReportedId;
     }
 
     public int getIssueAsigneeId() {
@@ -86,11 +74,11 @@ public class Issue {
         this.issueStatus = issueStatus;
     }
 
-    public String getIssuePriority() {
+    public IssuePriority getIssuePriority() {
         return issuePriority;
     }
 
-    public void setIssuePriority(String issuePriority) {
+    public void setIssuePriority(IssuePriority issuePriority) {
         this.issuePriority = issuePriority;
     }
 
@@ -102,35 +90,35 @@ public class Issue {
         this.issueSummary = issueSummary;
     }
 
-    public Date getIssueCreationDate() {
+    public LocalDateTime getIssueCreationDate() {
         return issueCreationDate;
     }
 
-    public void setIssueCreationDate(Date issueCreationDate) {
+    public void setIssueCreationDate(LocalDateTime issueCreationDate) {
         this.issueCreationDate = issueCreationDate;
     }
 
-    public Date getIssueTargetResolutionDate() {
+    public LocalDateTime getIssueTargetResolutionDate() {
         return issueTargetResolutionDate;
     }
 
-    public void setIssueTargetResolutionDate(Date issueTargetResolutionDate) {
+    public void setIssueTargetResolutionDate(LocalDateTime issueTargetResolutionDate) {
         this.issueTargetResolutionDate = issueTargetResolutionDate;
     }
 
-    public Date getIssueActualResolutionDate() {
+    public LocalDateTime getIssueActualResolutionDate() {
         return issueActualResolutionDate;
     }
 
-    public void setIssueActualResolutionDate(Date issueActualResolutionDate) {
+    public void setIssueActualResolutionDate(LocalDateTime issueActualResolutionDate) {
         this.issueActualResolutionDate = issueActualResolutionDate;
     }
 
-    public Date getIssueModifiedDate() {
+    public LocalDateTime getIssueModifiedDate() {
         return issueModifiedDate;
     }
 
-    public void setIssueModifiedDate(Date issueModifiedDate) {
+    public void setIssueModifiedDate(LocalDateTime issueModifiedDate) {
         this.issueModifiedDate = issueModifiedDate;
     }
 

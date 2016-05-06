@@ -1,19 +1,16 @@
 package training.model;
 
-import javax.persistence.*;
+
+import java.util.NavigableSet;
+import java.util.TreeSet;
 
 /**
  * Created by Oksana_Eryomenko on 4/15/2016.
  */
-@Entity
-@Table(name="User")
-public class User {
 
-    @Id
-    @GeneratedValue
-    private int userId;
+public class User extends DomainObject{
 
-    @ManyToOne
+
     private Project project;
 
     private String userUsername;
@@ -21,6 +18,8 @@ public class User {
     private String userLastName;
     private String userEmail;
     private String userRole;
+
+    private NavigableSet<Issue> issues = new TreeSet<>();
 
     public User(){}
     public User(String userUsername, String userFirstName, String userLastName, String userEmail){
@@ -47,14 +46,6 @@ public class User {
         this.userLastName = userLastName;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public String getUserUsername() {
         return userUsername;
     }
@@ -79,6 +70,16 @@ public class User {
         this.userRole = userRole;
     }
 
+    public NavigableSet<Issue> getIssues() {
+        return issues;
+    }
 
+    public void setIssues(NavigableSet<Issue> issues) {
+        this.issues = issues;
+    }
+
+public String toString(){
+    return getUserUsername() + " - " + getUserFirstName() + getUserLastName() + " - " + getUserEmail();
+}
 
 }

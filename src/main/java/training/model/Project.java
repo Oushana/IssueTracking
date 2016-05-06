@@ -11,15 +11,10 @@ import java.util.List;
 /**
  * Created by Oksana_Eryomenko on 4/15/2016.
  */
-@Entity
-@Table(name="Project")
-public class Project {
 
-    @Id
-    @GeneratedValue
-    private int projectId;
+public class Project extends DomainObject{
 
-    @OneToMany
+
     private List<User> users = new ArrayList<User>();;
 
     private String projectTitle;
@@ -29,14 +24,6 @@ public class Project {
     public Project(){}
     public Project( String projectTitle){
         this.projectTitle = projectTitle;
-    }
-
-    public int getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
     }
 
     public String getProjectTitle() {

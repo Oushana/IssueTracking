@@ -10,6 +10,7 @@ public interface IssueDAO {
     void add(Issue issue);
     void delete(Issue issue);
     void delete(long[] ids);
+    void save(Issue issue);
     //update
     //close
 }

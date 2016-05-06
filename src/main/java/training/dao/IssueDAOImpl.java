@@ -35,4 +35,10 @@ public class IssueDAOImpl implements IssueDAO{
             entityManager.remove(c);
         }
     }
-}
+
+    @Override
+    public void save(Issue issue) { }
+
+
+        }
+
