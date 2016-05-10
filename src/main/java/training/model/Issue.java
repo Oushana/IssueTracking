@@ -1,88 +1,111 @@
 package training.model;
 
+import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Created by Oksana_Eryomenko on 4/15/2016.
  */
+@Entity
+@Table(name = "Issues")
+public class Issue {
 
-public class Issue extends DomainObject {
+    @Id
+    @GeneratedValue
+    private int i_id;
 
-    private int issueReporterId;
-    private int issueAsigneeId;
+    private int reporterId;
+    private int asigneeId;
+    private String title;
+    private String description;
+    private String priority;
+    private String status;
+    private Long projectId;
 
-    private String issueTitle;
-    private String issueDescription;
-    private String issueStatus;
-    private IssuePriority issuePriority;
-    private String issueSummary;
+    // private String issueSummary;
+    // private LocalDateTime issueCreationDate;
+    //  private LocalDateTime issueTargetResolutionDate;
+    //  private LocalDateTime issueActualResolutionDate;
+    //  private LocalDateTime issueModifiedDate;
 
-    private LocalDateTime issueCreationDate;
-    private LocalDateTime issueTargetResolutionDate;
-    private LocalDateTime issueActualResolutionDate;
-    private LocalDateTime issueModifiedDate;
-
-    public Issue(){}
-
-    public Issue(int issueReporterId, String issueTitle){
-        this.issueReporterId = issueReporterId;
-        this.issueTitle = issueTitle;
+    public Issue() {
     }
 
+    public Issue(int issueReporterId, String issueTitle) {
+        this.reporterId = issueReporterId;
+        this.title = issueTitle;
+    }
 
+    public int getId() {
+        return i_id;
+    }
+
+    public void setId(int id) {
+        this.i_id = id;
+    }
 
     public int getIssueReporterId() {
-        return issueReporterId;
+        return reporterId;
     }
 
     public void setIssueReporterId(int issueReportedId) {
-        this.issueReporterId = issueReportedId;
+        this.reporterId = issueReportedId;
     }
 
     public int getIssueAsigneeId() {
-        return issueAsigneeId;
+        return asigneeId;
     }
 
     public void setIssueAsigneeId(int issueAsigneeId) {
-        this.issueAsigneeId = issueAsigneeId;
+        this.asigneeId = issueAsigneeId;
     }
 
     public String getIssueTitle() {
-        return issueTitle;
+        return title;
     }
 
     public void setIssueTitle(String issueTitle) {
-        this.issueTitle = issueTitle;
+        this.title = issueTitle;
     }
 
     public String getIssueDescription() {
-        return issueDescription;
+        return description;
     }
 
     public void setIssueDescription(String issueDescription) {
-        this.issueDescription = issueDescription;
+        this.description = issueDescription;
     }
 
     public String getIssueStatus() {
-        return issueStatus;
+        return status;
     }
 
     public void setIssueStatus(String issueStatus) {
-        this.issueStatus = issueStatus;
+        this.status = issueStatus;
     }
 
-    public IssuePriority getIssuePriority() {
-        return issuePriority;
+    public String getIssuePriority() {
+        return priority;
     }
 
-    public void setIssuePriority(IssuePriority issuePriority) {
-        this.issuePriority = issuePriority;
+    public void setIssuePriority(String issuePriority) {
+        this.priority = issuePriority;
     }
 
-    public String getIssueSummary() {
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+   /* public String getIssueSummary() {
         return issueSummary;
     }
 
@@ -120,7 +143,10 @@ public class Issue extends DomainObject {
 
     public void setIssueModifiedDate(LocalDateTime issueModifiedDate) {
         this.issueModifiedDate = issueModifiedDate;
+    }*/
+
+    @Override
+    public String toString() {
+        return getId() + ":asignee:[" + getIssueReporterId() + "]-" + getIssueTitle() + "-" + getIssueDescription() + "- reporter:[" + getIssueAsigneeId() + "] " + getIssuePriority() + " " + getIssueStatus();
     }
-
-
 }

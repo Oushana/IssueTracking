@@ -1,32 +1,41 @@
 package training.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import training.dao.ProjectDAO;
 import training.model.Project;
 
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by Oksana_Eryomenko on 5/6/2016.
  */
-public class ProjectServiceImpl implements ProjectService{
 
+@Service
+public class ProjectServiceImpl implements ProjectService {
+
+    @Autowired
     private ProjectDAO projectDAO;
 
+    @Transactional
     public void addProject(Project project) {
         projectDAO.add(project);
     }
 
+    @Transactional
     public void deleteProject(Project project) {
         projectDAO.delete(project);
     }
 
-    @Override
+    @Transactional
     public Set<Project> getAll() {
         return null;
     }
 
-    @Override
-    public Project getByName(String name) {
-        return null;
+    @Transactional
+    public List<Project> getByName(String title) {
+        return projectDAO.getByName(title);
     }
 }

@@ -1,68 +1,87 @@
 package training.model;
 
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
 /**
  * Created by Oksana_Eryomenko on 4/15/2016.
  */
+@Entity
+@Table(name = "Users")
+public class User {
 
-public class User extends DomainObject{
+    @Id
+    @GeneratedValue
+    private int u_id;
 
+    // private Project project;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String email;
 
-    private Project project;
+    // private String userRole;
+    // private NavigableSet<Issue> issues = new TreeSet<>();
 
-    private String userUsername;
-    private String userFirstName;
-    private String userLastName;
-    private String userEmail;
-    private String userRole;
+    public User() {
+    }
 
-    private NavigableSet<Issue> issues = new TreeSet<>();
+    public User(String userUsername, String userFirstName, String userLastName, String userEmail) {
+        this.username = userUsername;
+        this.firstName = userFirstName;
+        this.lastName = userLastName;
+        this.email = userEmail;
 
-    public User(){}
-    public User(String userUsername, String userFirstName, String userLastName, String userEmail){
-        this.userUsername = userUsername;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
+    }
 
+    public int getId() {
+        return u_id;
+    }
+
+    public void setId(int id) {
+        this.u_id = id;
     }
 
     public String getUserFirstName() {
-        return userFirstName;
+        return firstName;
     }
 
     public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+        this.firstName = userFirstName;
     }
 
     public String getUserLastName() {
-        return userLastName;
+        return lastName;
     }
 
     public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+        this.lastName = userLastName;
     }
 
     public String getUserUsername() {
-        return userUsername;
+        return username;
     }
 
     public void setUserUsername(String userUsername) {
-        this.userUsername = userUsername;
+        this.username = userUsername;
     }
 
     public String getUserEmail() {
-        return userEmail;
+        return email;
     }
 
     public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+        this.email = userEmail;
     }
 
-    public String getUserRole() {
+   /*  public String getUserRole() {
         return userRole;
     }
 
@@ -70,16 +89,16 @@ public class User extends DomainObject{
         this.userRole = userRole;
     }
 
-    public NavigableSet<Issue> getIssues() {
+   public NavigableSet<Issue> getIssues() {
         return issues;
     }
 
     public void setIssues(NavigableSet<Issue> issues) {
         this.issues = issues;
-    }
+    }*/
 
-public String toString(){
-    return getUserUsername() + " - " + getUserFirstName() + getUserLastName() + " - " + getUserEmail();
-}
+    public String toString() {
+        return getId() + ":" + getUserUsername() + " - " + getUserFirstName() + " " + getUserLastName() + " - " + getUserEmail();
+    }
 
 }

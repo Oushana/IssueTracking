@@ -2,14 +2,17 @@ package training.dao;
 
 import org.springframework.stereotype.Repository;
 import training.model.User;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by Oksana_Eryomenko on 4/21/2016.
  */
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -25,11 +28,33 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public void delete(long[] ids) {
-        User c;
-        for (long id : ids) {
-            c = entityManager.getReference(User.class, id);
-            entityManager.remove(c);
+    public void delete(int[] ids) {
+        User u;
+        for (int id : ids) {
+            u = entityManager.getReference(User.class, id);
+            entityManager.remove(u);
         }
     }
+
+    @Override
+    public List<User> getUserByEmail(String email) {
+
+        Query query;
+
+        if (!email.equalsIgnoreCase("")) {
+            query = entityManager.createQuery("SELECT c FROM User c WHERE c.email=:email", User.class);
+            query.setParameter("email", email);
+        } else {
+            query = entityManager.createQuery("SELECT c FROM User c", User.class);
+        }
+
+        return (List<User>) query.getResultList();
+
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return null;
+    }
+
 }

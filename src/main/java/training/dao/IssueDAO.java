@@ -3,14 +3,16 @@ package training.dao;
 
 import training.model.Issue;
 
+import java.util.List;
+
 /**
  * Created by Oksana_Eryomenko on 4/21/2016.
  */
 public interface IssueDAO {
+
     void add(Issue issue);
+
     void delete(Issue issue);
-    void delete(long[] ids);
-    void save(Issue issue);
-    //update
-    //close
+
+    List<Issue> getIssueByReporterId(int id);
 }
