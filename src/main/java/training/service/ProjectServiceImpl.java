@@ -31,7 +31,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Transactional
     public Set<Project> getAll() {
-        return null;
+        return projectDAO.getAll();
     }
 
     @Transactional

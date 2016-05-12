@@ -22,12 +22,12 @@ public class IssueDAOImpl implements IssueDAO {
 
     @Override
     public void add(Issue issue) {
-        // entityManager.merge(issue);
+         entityManager.merge(issue);
     }
 
     @Override
     public void delete(Issue issue) {
-        //    entityManager.remove(issue);
+           entityManager.remove(issue);
     }
 
     @Override

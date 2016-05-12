@@ -28,7 +28,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class AppConfig {
 
-    @Bean
+   /* @Bean
     public User user() {
         return new User();
     }
@@ -41,7 +41,7 @@ public class AppConfig {
     @Bean
     public Issue issue() {
         return new Issue();
-    }
+    }*/
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory

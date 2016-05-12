@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Oksana_Eryomenko on 4/21/2016.
@@ -47,5 +48,12 @@ public class ProjectDAOImpl implements ProjectDAO {
         }
 
         return (List<Project>) query.getResultList();
+    }
+
+    @Override
+    public Set<Project> getAll() {
+        Query  query = entityManager.createQuery("SELECT c FROM Project c", Project.class);
+
+        return (Set<Project>) query.getResultList();
     }
 }

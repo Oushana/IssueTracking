@@ -17,21 +17,25 @@ public class App {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        //  ctx.register(AppConfig.class);
-        //  ctx.refresh();
-
         UserService userService = ctx.getBean(UserService.class);
         System.out.println("--users--");
         System.out.println(userService.sayGreeting());
         System.out.println(userService.getUserByEmail("user1@email.com"));
 
-        IssueService issueService = ctx.getBean(IssueService.class);
-        System.out.println("--issues--");
-        System.out.println(issueService.getIssueByReporterId(1002));
+       // userService.addUser(new User("user11", "Ivan11", "Ivanov11", "user11@email.com"));
+        System.out.println("---");
+       // System.out.println(userService.getUserByEmail("user11@email.com"));
+        System.out.println(userService.getAllUsers());
 
-        ProjectService projectService = ctx.getBean(ProjectService.class);
-        System.out.println("--projects--");
-        System.out.println(projectService.getByName("Project3"));
+
+       // IssueService issueService = ctx.getBean(IssueService.class);
+       // System.out.println("--issues--");
+       // System.out.println(issueService.getIssueByReporterId(1002));
+
+
+      //  ProjectService projectService = ctx.getBean(ProjectService.class);
+       // System.out.println("--projects--");
+       // System.out.println(projectService.getByName("Project3"));
 
     }
 
