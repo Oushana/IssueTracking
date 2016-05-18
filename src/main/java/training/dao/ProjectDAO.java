@@ -18,5 +18,5 @@ public interface ProjectDAO {
 
     List<Project> getByName(String title);
 
-    Set<Project> getAll();
+    List<Project> getAll();
 }

@@ -30,12 +30,17 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Transactional
-    public Set<Project> getAll() {
+    public List<Project> getAll() {
         return projectDAO.getAll();
     }
 
     @Transactional
     public List<Project> getByName(String title) {
         return projectDAO.getByName(title);
+    }
+
+    @Transactional(readOnly=true)
+    public Project findProject(int id) {
+        return projectDAO.findOne(id);
     }
 }

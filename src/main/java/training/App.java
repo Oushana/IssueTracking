@@ -22,7 +22,7 @@ public class App {
         System.out.println(userService.sayGreeting());
         System.out.println(userService.getUserByEmail("user1@email.com"));
 
-        userService.addUser(new User("user12", "Ivan12", "Ivanov12", "user12@email.com"));
+       // userService.addUser(new User("user12", "Ivan12", "Ivanov12", "user12@email.com"));
         System.out.println("---");
         System.out.println(userService.getUserByEmail("user11@email.com"));
         System.out.println(userService.getAllUsers());
@@ -33,9 +33,9 @@ public class App {
         System.out.println(issueService.getIssueByReporterId(1002));
 
 
-      //  ProjectService projectService = ctx.getBean(ProjectService.class);
-       // System.out.println("--projects--");
-       // System.out.println(projectService.getByName("Project3"));
+        ProjectService projectService = ctx.getBean(ProjectService.class);
+        System.out.println("--projects--");
+        System.out.println(projectService.getByName("Project3"));
 
     }
 

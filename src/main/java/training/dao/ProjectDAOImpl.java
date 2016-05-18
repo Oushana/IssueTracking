@@ -51,9 +51,9 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     @Override
-    public Set<Project> getAll() {
+    public List<Project> getAll() {
         Query  query = entityManager.createQuery("SELECT c FROM Project c", Project.class);
 
-        return (Set<Project>) query.getResultList();
+        return (List<Project>) query.getResultList();
     }
 }

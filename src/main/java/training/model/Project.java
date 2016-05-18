@@ -20,10 +20,11 @@ public class Project {
     @GeneratedValue
     private Long p_id;
 
-    // private List<User> users = new ArrayList<User>();
+
     private String title;
     private String description;
     private Long leadId;
+    // private List<User> users = new ArrayList<User>();
 
     public Project() {
     }
@@ -32,41 +33,41 @@ public class Project {
         this.title = projectTitle;
     }
 
-    public Long getProjectId() {
+    public Long getP_id() {
         return p_id;
     }
 
-    public void setProjectId(Long projectId) {
+    public void setP_id(Long projectId) {
         this.p_id = projectId;
     }
 
-    public String getProjectTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setProjectTitle(String projectTitle) {
+    public void setTitle(String projectTitle) {
         this.title = projectTitle;
     }
 
-    public String getProjectDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setProjectDescription(String projectDescription) {
+    public void setDescription(String projectDescription) {
         this.description = projectDescription;
     }
 
-    public Long getProjectLead() {
+    public Long getLeadId() {
         return leadId;
     }
 
-    public void setProjectLead(Long projectLeadId) {
+    public void setLeadId(Long projectLeadId) {
         this.leadId = projectLeadId;
     }
 
     @Override
     public String toString() {
-        return getProjectId() + ": " + getProjectTitle() + "  [" + getProjectDescription() + "] - " + getProjectLead();
+        return getP_id() + ": " + getTitle() + "  [" + getDescription() + "] - " + getLeadId();
     }
 
 }
