@@ -41,43 +41,43 @@ public class User {
 
     }
 
-    public int getId() {
+    public int getU_id() {
         return u_id;
     }
 
-    public void setId(int id) {
+    public void setU_id(int id) {
         this.u_id = id;
     }
 
-    public String getUserFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setUserFirstName(String userFirstName) {
+    public void setFirstName(String userFirstName) {
         this.firstName = userFirstName;
     }
 
-    public String getUserLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setUserLastName(String userLastName) {
+    public void setLastName(String userLastName) {
         this.lastName = userLastName;
     }
 
-    public String getUserUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUserUsername(String userUsername) {
+    public void setUsername(String userUsername) {
         this.username = userUsername;
     }
 
-    public String getUserEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setUserEmail(String userEmail) {
+    public void setEmail(String userEmail) {
         this.email = userEmail;
     }
 
@@ -98,7 +98,7 @@ public class User {
     }*/
 
     public String toString() {
-        return getId() + ":" + getUserUsername() + " - " + getUserFirstName() + " " + getUserLastName() + " - " + getUserEmail();
+        return getU_id() + ":" + getUsername() + " - " + getFirstName() + " " + getLastName() + " - " + getEmail();
     }
 
 }

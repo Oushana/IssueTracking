@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(User user) {
         int[] ids = new int[1];
-        ids[0] = user.getId();
+        ids[0] = user.getU_id();
         delete(ids);
     }
 
