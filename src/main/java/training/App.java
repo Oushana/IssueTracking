@@ -22,9 +22,9 @@ public class App {
         System.out.println(userService.sayGreeting());
         System.out.println(userService.getUserByEmail("user1@email.com"));
 
-       // userService.addUser(new User("user11", "Ivan11", "Ivanov11", "user11@email.com"));
+        userService.addUser(new User("user11", "Ivan11", "Ivanov11", "user11@email.com"));
         System.out.println("---");
-       // System.out.println(userService.getUserByEmail("user11@email.com"));
+        System.out.println(userService.getUserByEmail("user11@email.com"));
         System.out.println(userService.getAllUsers());
 
 
