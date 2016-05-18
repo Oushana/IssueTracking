@@ -13,7 +13,7 @@ import training.service.UserService;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("Hello World");
+      /*  System.out.println("Hello World");
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -36,6 +36,7 @@ public class App {
         ProjectService projectService = ctx.getBean(ProjectService.class);
         System.out.println("--projects--");
         System.out.println(projectService.getByName("Project3"));
+        */
 
     }
 
