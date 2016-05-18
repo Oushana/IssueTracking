@@ -41,59 +41,59 @@ public class Issue {
         this.title = issueTitle;
     }
 
-    public int getId() {
+    public int getI_id() {
         return i_id;
     }
 
-    public void setId(int id) {
+    public void setI_id(int id) {
         this.i_id = id;
     }
 
-    public int getIssueReporterId() {
+    public int getReporterId() {
         return reporterId;
     }
 
-    public void setIssueReporterId(int issueReportedId) {
+    public void setReporterId(int issueReportedId) {
         this.reporterId = issueReportedId;
     }
 
-    public int getIssueAsigneeId() {
+    public int getAsigneeId() {
         return asigneeId;
     }
 
-    public void setIssueAsigneeId(int issueAsigneeId) {
+    public void setAsigneeId(int issueAsigneeId) {
         this.asigneeId = issueAsigneeId;
     }
 
-    public String getIssueTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setIssueTitle(String issueTitle) {
+    public void setTitle(String issueTitle) {
         this.title = issueTitle;
     }
 
-    public String getIssueDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setIssueDescription(String issueDescription) {
+    public void setDescription(String issueDescription) {
         this.description = issueDescription;
     }
 
-    public String getIssueStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setIssueStatus(String issueStatus) {
+    public void setStatus(String issueStatus) {
         this.status = issueStatus;
     }
 
-    public String getIssuePriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setIssuePriority(String issuePriority) {
+    public void setPriority(String issuePriority) {
         this.priority = issuePriority;
     }
 
@@ -147,6 +147,6 @@ public class Issue {
 
     @Override
     public String toString() {
-        return getId() + ":asignee:[" + getIssueReporterId() + "]-" + getIssueTitle() + "-" + getIssueDescription() + "- reporter:[" + getIssueAsigneeId() + "] " + getIssuePriority() + " " + getIssueStatus();
+        return getI_id() + ":asignee:[" + getReporterId() + "]-" + getTitle() + "-" + getDescription() + "- reporter:[" + getAsigneeId() + "] " + getPriority() + " " + getStatus();
     }
 }

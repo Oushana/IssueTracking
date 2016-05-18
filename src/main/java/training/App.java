@@ -22,15 +22,15 @@ public class App {
         System.out.println(userService.sayGreeting());
         System.out.println(userService.getUserByEmail("user1@email.com"));
 
-        userService.addUser(new User("user11", "Ivan11", "Ivanov11", "user11@email.com"));
+        userService.addUser(new User("user12", "Ivan12", "Ivanov12", "user12@email.com"));
         System.out.println("---");
         System.out.println(userService.getUserByEmail("user11@email.com"));
         System.out.println(userService.getAllUsers());
 
 
-       // IssueService issueService = ctx.getBean(IssueService.class);
-       // System.out.println("--issues--");
-       // System.out.println(issueService.getIssueByReporterId(1002));
+        IssueService issueService = ctx.getBean(IssueService.class);
+        System.out.println("--issues--");
+        System.out.println(issueService.getIssueByReporterId(1002));
 
 
       //  ProjectService projectService = ctx.getBean(ProjectService.class);

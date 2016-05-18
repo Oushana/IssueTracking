@@ -44,6 +44,12 @@ public class IssueDAOImpl implements IssueDAO {
         return (List<Issue>) query.getResultList();
     }
 
+    @Override
+    public List<Issue> getAllIssues() {
 
+        Query  query = entityManager.createQuery("SELECT c FROM Issue c", Issue.class);
+
+        return (List<Issue>) query.getResultList();
+    }
 }
 
