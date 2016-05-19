@@ -7,9 +7,6 @@ import training.service.ProjectService;
 import training.service.UserService;
 
 
-/**
- * Created by Oksana_Eryomenko on 5/6/2016.
- */
 public class App {
     public static void main(String[] args) {
 

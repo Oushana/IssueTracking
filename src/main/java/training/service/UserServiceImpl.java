@@ -8,9 +8,7 @@ import training.model.User;
 
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 5/6/2016.
- */
+
 
 @Service
 public class UserServiceImpl implements UserService {

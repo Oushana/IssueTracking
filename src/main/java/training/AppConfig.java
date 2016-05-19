@@ -10,6 +10,9 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import training.model.Issue;
 import training.model.Project;
 import training.model.User;
@@ -19,13 +22,12 @@ import training.service.UserServiceImpl;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * Created by Oksana_Eryomenko on 5/9/2016.
- */
+
 
 @Configuration
 @ComponentScan("training")
 @EnableTransactionManagement
+@EnableWebMvc
 public class AppConfig {
 
    /* @Bean
@@ -74,10 +76,24 @@ public class AppConfig {
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/mydb");
         ds.setUsername("root");
-        ds.setPassword("***");
+        ds.setPassword("11111");
 
         return ds;
     }
 
+    @Bean
+    public UrlBasedViewResolver setupViewResolver() {
+        UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+        resolver.setPrefix("/WEB-INF/pages/");
+        resolver.setSuffix(".jsp");
+        resolver.setCache(false);
+        resolver.setViewClass(JstlView.class);
+        resolver.setOrder(1);
+        return resolver;
+    }
 
+    //@Bean
+    //public CommonsMultipartResolver multipartResolver() {
+    //   return new CommonsMultipartResolver();
+    //}
 }

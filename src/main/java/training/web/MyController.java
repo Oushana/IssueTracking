@@ -8,9 +8,6 @@ import training.service.IssueService;
 import training.service.ProjectService;
 import training.service.UserService;
 
-/**
- * Created by Oksana_Eryomenko on 5/18/2016.
- */
 
 @Controller
 @RequestMapping("/")

@@ -10,9 +10,7 @@ import javax.persistence.Query;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
+
 
 @Repository
 public class ProjectDAOImpl implements ProjectDAO {
