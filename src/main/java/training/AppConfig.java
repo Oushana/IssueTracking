@@ -29,21 +29,6 @@ import javax.sql.DataSource;
 @EnableWebMvc
 public class AppConfig {
 
-   /* @Bean
-    public User user() {
-        return new User();
-    }
-
-    @Bean
-    public Project project() {
-        return new Project();
-    }
-
-    @Bean
-    public Issue issue() {
-        return new Issue();
-    }*/
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory
             (DataSource dataSource, JpaVendorAdapter jpaVendeorAdapter) {
