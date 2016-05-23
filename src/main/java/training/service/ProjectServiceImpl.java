@@ -9,10 +9,6 @@ import training.model.Project;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by Oksana_Eryomenko on 5/6/2016.
- */
-
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
@@ -27,6 +23,16 @@ public class ProjectServiceImpl implements ProjectService {
     @Transactional
     public void deleteProject(Project project) {
         projectDAO.delete(project);
+    }
+
+    @Transactional
+    public void delete(int[] ids) {
+        projectDAO.delete(ids);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        projectDAO.delete(id);
     }
 
     @Transactional

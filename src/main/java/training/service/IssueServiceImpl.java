@@ -13,11 +13,6 @@ import training.model.User;
 
 import java.util.List;
 
-
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
-
 @Service
 public class IssueServiceImpl implements IssueService {
 
@@ -34,13 +29,23 @@ public class IssueServiceImpl implements IssueService {
         issueDAO.delete(issue);
     }
 
+    @Transactional
+    public void delete(int[] ids) {
+        issueDAO.delete(ids);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        issueDAO.delete(id);
+    }
+
     @Override
     public List<Issue> getIssueByReporterId(int id) {
         return issueDAO.getIssueByReporterId(id);
     }
 
     @Transactional
-    public List<Issue> getAllIssues() {
-        return issueDAO.getAllIssues();
+    public List<Issue> getAll() {
+        return issueDAO.getAll();
     }
 }

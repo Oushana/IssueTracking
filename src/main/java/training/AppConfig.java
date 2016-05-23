@@ -19,10 +19,6 @@ import training.service.UserServiceImpl;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * Created by Oksana_Eryomenko on 5/9/2016.
- */
-
 @Configuration
 @ComponentScan("training")
 @EnableTransactionManagement
@@ -74,7 +70,7 @@ public class AppConfig {
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/mydb");
         ds.setUsername("root");
-        ds.setPassword("***");
+        ds.setPassword("11111");
 
         return ds;
     }

@@ -8,9 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
 @Repository
 public class UserDAOImpl implements UserDAO {
 
@@ -37,6 +34,13 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public void delete(int id) {
+        User u;
+            u = entityManager.getReference(User.class, id);
+            entityManager.remove(u);
+    }
+
+    @Override
     public List<User> getUserByEmail(String email) {
 
         Query query;
@@ -53,7 +57,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<User> getAll() {
 
         Query  query = entityManager.createQuery("SELECT c FROM User c", User.class);
 

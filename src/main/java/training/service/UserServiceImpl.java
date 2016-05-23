@@ -8,10 +8,6 @@ import training.model.User;
 
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 5/6/2016.
- */
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -41,13 +37,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userDAO.getAllUsers();
+    public List<User> getAll() {
+        return userDAO.getAll();
     }
 
     @Transactional
     public void delete(int[] ids) {
         userDAO.delete(ids);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        userDAO.delete(id);
     }
 
     @Transactional
