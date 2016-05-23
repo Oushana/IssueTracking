@@ -14,12 +14,13 @@ public interface UserService {
     void delete(User user);
 
     void delete(int[] ids);
+    void delete(int id);
 
     List<User> getUserByEmail(String email);
 
     List<User> getUserById(int id);
 
-    List<User> getAllUsers();
+    List<User> getAll();
 
     String sayGreeting();
 }

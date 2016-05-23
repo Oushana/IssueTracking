@@ -74,7 +74,7 @@ public class AppConfig {
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/mydb");
         ds.setUsername("root");
-        ds.setPassword("***");
+        ds.setPassword("11111");
 
         return ds;
     }
