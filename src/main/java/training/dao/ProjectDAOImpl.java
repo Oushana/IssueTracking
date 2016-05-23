@@ -10,10 +10,6 @@ import javax.persistence.Query;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
-
 @Repository
 public class ProjectDAOImpl implements ProjectDAO {
 
@@ -28,6 +24,22 @@ public class ProjectDAOImpl implements ProjectDAO {
     @Override
     public void delete(Project project) {
         entityManager.remove(project);
+    }
+
+    @Override
+    public void delete(int[] ids) {
+        Project p;
+        for (int id : ids) {
+            p = entityManager.getReference(Project.class, id);
+            entityManager.remove(p);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        Project p = entityManager.getReference(Project.class, id);
+        entityManager.remove(p);
+
     }
 
     @Override

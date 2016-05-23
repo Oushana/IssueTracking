@@ -9,9 +9,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
 
 @Repository
 public class IssueDAOImpl implements IssueDAO {
@@ -28,6 +25,21 @@ public class IssueDAOImpl implements IssueDAO {
     @Override
     public void delete(Issue issue) {
            entityManager.remove(issue);
+    }
+
+    @Override
+    public void delete(int[] ids) {
+        Issue issue;
+        for (int id : ids) {
+            issue = entityManager.getReference(Issue.class, id);
+            entityManager.remove(issue);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        Issue issue = entityManager.getReference(Issue.class, id);
+        entityManager.remove(issue);
     }
 
     @Override

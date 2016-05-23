@@ -5,14 +5,14 @@ import training.model.Project;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
 public interface ProjectDAO {
 
     void add(Project project);
 
     void delete(Project project);
+
+    void delete(int[] ids);
+    void delete(int id);
 
     Project findOne(long id);
 

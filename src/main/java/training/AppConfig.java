@@ -19,10 +19,6 @@ import training.service.UserServiceImpl;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * Created by Oksana_Eryomenko on 5/9/2016.
- */
-
 @Configuration
 @ComponentScan("training")
 @EnableTransactionManagement

@@ -8,9 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-/**
- * Created by Oksana_Eryomenko on 4/15/2016.
- */
+
 @Entity
 @Table(name = "Issues")
 public class Issue {

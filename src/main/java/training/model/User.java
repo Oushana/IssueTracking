@@ -10,9 +10,7 @@ import javax.persistence.Table;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
-/**
- * Created by Oksana_Eryomenko on 4/15/2016.
- */
+
 @Entity
 @Table(name = "Users")
 public class User {
