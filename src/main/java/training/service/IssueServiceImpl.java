@@ -38,7 +38,7 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Transactional
-    public List<Issue> getAllIssues() {
-        return issueDAO.getAllIssues();
+    public List<Issue> getAll() {
+        return issueDAO.getAll();
     }
 }

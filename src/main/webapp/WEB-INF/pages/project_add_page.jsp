@@ -8,13 +8,12 @@
 </head>
 <body>
 <div class="container">
-    <form role="form"  class="form-horizontal" action="/user/add" method="post">
+    <form role="form"  class="form-horizontal" action="/project/add" method="post">
         <h3>New project</h3>
 
-        <input class="form-control form-user" type="text" name="username" placeholder="UserName">
-        <input class="form-control form-user" type="text" name="name" placeholder="Name">
-        <input class="form-control form-user" type="text" name="surname" placeholder="Surname">
-        <input class="form-control form-user" type="text" name="email" placeholder="E-mail">
+        <input class="form-control form-user" type="text" name="title" placeholder="Title">
+        <input class="form-control form-user" type="text" name="description" placeholder="Description">
+        <input class="form-control form-user" type="number" name="leadId" placeholder="Lead Id">
 
         <input type="submit" class="btn btn-primary" value="Add">
     </form>

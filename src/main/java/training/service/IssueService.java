@@ -14,6 +14,6 @@ public interface IssueService {
 
     List<Issue> getIssueByReporterId(int id);
 
-    List<Issue> getAllIssues();
+    List<Issue> getAll();
 
 }

@@ -43,7 +43,7 @@ public class IssueDAOImpl implements IssueDAO {
     }
 
     @Override
-    public List<Issue> getAllIssues() {
+    public List<Issue> getAll() {
 
         Query  query = entityManager.createQuery("SELECT c FROM Issue c", Issue.class);
 

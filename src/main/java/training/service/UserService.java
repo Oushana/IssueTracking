@@ -16,7 +16,7 @@ public interface UserService {
 
     List<User> getUserById(int id);
 
-    List<User> getAllUsers();
+    List<User> getAll();
 
     String sayGreeting();
 }
