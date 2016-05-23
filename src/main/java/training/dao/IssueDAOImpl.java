@@ -2,7 +2,6 @@ package training.dao;
 
 import org.springframework.stereotype.Repository;
 import training.model.Issue;
-import training.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,6 +25,21 @@ public class IssueDAOImpl implements IssueDAO {
     @Override
     public void delete(Issue issue) {
            entityManager.remove(issue);
+    }
+
+    @Override
+    public void delete(int[] ids) {
+       Issue issue;
+        for (int id : ids) {
+            issue = entityManager.getReference(Issue.class, id);
+            entityManager.remove(issue);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        Issue issue = entityManager.getReference(Issue.class, id);
+        entityManager.remove(issue);
     }
 
     @Override

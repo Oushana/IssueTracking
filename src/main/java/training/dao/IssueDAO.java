@@ -12,6 +12,9 @@ public interface IssueDAO {
 
     void delete(Issue issue);
 
+    void delete(int[] ids);
+    void delete(int id);
+
     List<Issue> getIssueByReporterId(int id);
 
     List<Issue> getAll();

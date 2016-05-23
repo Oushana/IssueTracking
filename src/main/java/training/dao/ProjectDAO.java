@@ -11,6 +11,9 @@ public interface ProjectDAO {
 
     void delete(Project project);
 
+    void delete(int[] ids);
+    void delete(int id);
+
     Project findOne(long id);
 
     List<Project> getByName(String title);

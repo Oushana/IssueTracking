@@ -29,6 +29,22 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     @Override
+    public void delete(int[] ids) {
+        Project p;
+        for (int id : ids) {
+            p = entityManager.getReference(Project.class, id);
+            entityManager.remove(p);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        Project p = entityManager.getReference(Project.class, id);
+        entityManager.remove(p);
+    }
+
+
+    @Override
     public Project findOne(long id) {
         return entityManager.getReference(Project.class, id);
 

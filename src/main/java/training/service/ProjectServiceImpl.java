@@ -28,6 +28,16 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Transactional
+    public void delete(int[] ids) {
+        projectDAO.delete(ids);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        projectDAO.delete(id);
+    }
+
+    @Transactional
     public List<Project> getAll() {
         return projectDAO.getAll();
     }

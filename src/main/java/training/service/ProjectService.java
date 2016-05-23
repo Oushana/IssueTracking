@@ -11,6 +11,8 @@ public interface ProjectService {
     void addProject(Project project);
 
     void deleteProject(Project project);
+    void delete(int[] ids);
+    void delete(int id);
 
     List<Project> getAll();
 

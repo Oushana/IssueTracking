@@ -49,6 +49,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
+    public void delete(int id) {
+        userDAO.delete(id);
+    }
+
+    @Transactional
     public String sayGreeting() {
         return "Greeting, user!";
     }

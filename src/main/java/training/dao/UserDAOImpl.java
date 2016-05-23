@@ -37,6 +37,13 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public void delete(int id) {
+        User u;
+            u = entityManager.getReference(User.class, id);
+            entityManager.remove(u);
+    }
+
+    @Override
     public List<User> getUserByEmail(String email) {
 
         Query query;
