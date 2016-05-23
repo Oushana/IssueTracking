@@ -43,6 +43,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <td></td>
             <td><b>Id</b></td>
             <td><b>UserName</b></td>
             <td><b>Name</b></td>
@@ -53,6 +54,7 @@
         </thead>
         <c:forEach items="${users}" var="user">
             <tr>
+                <td><input type="checkbox" name="toDelete[]" value="${user.u_id}" id="checkbox_${user.u_id}"/></td>
                 <td>${user.u_id}</td>
                 <td>${user.username}</td>
                 <td>${user.firstName}</td>
@@ -75,12 +77,12 @@
         window.location.href='/project_add_page';
     })
 
-    $('#delete_project').click(function(){
-        window.location.href='/#';
-    })
-
     $('#add_issue').click(function(){
         window.location.href='/issue_add_page';
+    })
+
+    $('#delete_project').click(function(){
+        window.location.href='/#';
     })
 
     $('#delete_issue').click(function(){
@@ -105,6 +107,7 @@
             data['toDelete[]'].push($(this).val());
         });
         $.post("/user/delete", data);
+        window.location.href='/users';
     })
 
     $( "li .searchterm" ).click(function() {

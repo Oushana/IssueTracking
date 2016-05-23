@@ -10,16 +10,9 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
-import training.model.Issue;
-import training.model.Project;
-import training.model.User;
-import training.service.UserService;
-import training.service.UserServiceImpl;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 

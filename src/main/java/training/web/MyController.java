@@ -116,4 +116,14 @@ public class MyController {
         model.addAttribute("projects", projectService.getAll());
         return "projects";
     }
+
+    @RequestMapping(value = "/user/delete", method = RequestMethod.POST)
+    public String search(@RequestParam(value = "toDelete[]", required = false) int[] toDelete, Model model) {
+        if (toDelete != null)
+            userService.delete(toDelete);
+
+        //model.addAttribute("groups", contactService.listGroups());
+        model.addAttribute("users", userService.getAll());
+        return "users";
+    }
 }
