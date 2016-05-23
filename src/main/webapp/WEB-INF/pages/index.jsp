@@ -22,8 +22,10 @@
                     <li><button type="button" id="projects_list" class="btn btn-default navbar-btn">Projects</button></li>
                     <li><button type="button" id="add_user" class="btn btn-default navbar-btn">Add User</button></li>
                     <li><button type="button" id="add_project" class="btn btn-default navbar-btn">Add Project</button></li>
+                    <li><button type="button" id="add_issue" class="btn btn-default navbar-btn">Add Issue</button></li>
                     <li><button type="button" id="delete_user" class="btn btn-default navbar-btn">Delete User</button></li>
                     <li><button type="button" id="delete_project" class="btn btn-default navbar-btn">Delete Project</button></li>
+                    <li><button type="button" id="delete_issue" class="btn btn-default navbar-btn">Delete Issue</button></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
@@ -53,7 +55,15 @@
     })
 
     $('#delete_project').click(function(){
-        window.location.href='/project_add_page';
+        window.location.href='/#';
+    })
+
+    $('#add_issue').click(function(){
+        window.location.href='/issue_add_page';
+    })
+
+    $('#delete_issue').click(function(){
+        window.location.href='/#';
     })
 
     $('#issues_list').click(function(){

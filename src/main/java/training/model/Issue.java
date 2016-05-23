@@ -25,7 +25,7 @@ public class Issue {
     private String description;
     private String priority;
     private String status;
-    private Long projectId;
+    private int projectId;
 
     // private String issueSummary;
     // private LocalDateTime issueCreationDate;
@@ -39,6 +39,15 @@ public class Issue {
     public Issue(int issueReporterId, String issueTitle) {
         this.reporterId = issueReporterId;
         this.title = issueTitle;
+    }
+
+    public Issue(int issueReporterId, int asigneeId, String issueTitle, String description, String priority, String status, int projectId) {
+        this(issueReporterId, issueTitle);
+        this.asigneeId = asigneeId;
+        this.description = description;
+        this.priority = priority;
+        this.status = status;
+        this.projectId = projectId;
     }
 
     public int getI_id() {
@@ -97,11 +106,11 @@ public class Issue {
         this.priority = issuePriority;
     }
 
-    public Long getProjectId() {
+    public int getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(Long projectId) {
+    public void setProjectId(int projectId) {
         this.projectId = projectId;
     }
 
