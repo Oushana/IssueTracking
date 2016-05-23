@@ -23,8 +23,6 @@ import training.service.UserServiceImpl;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-
-
 @Configuration
 @ComponentScan("training")
 @EnableTransactionManagement

@@ -9,9 +9,6 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 4/15/2016.
- */
 @Entity
 @Table(name = "Projects")
 public class Project {

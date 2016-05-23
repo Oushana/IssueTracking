@@ -4,8 +4,6 @@ import training.model.Issue;
 
 import java.util.List;
 
-
-
 public interface IssueService {
 
     void addIssue(Issue issue);

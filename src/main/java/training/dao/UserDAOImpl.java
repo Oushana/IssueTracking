@@ -8,9 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created by Oksana_Eryomenko on 4/21/2016.
- */
 @Repository
 public class UserDAOImpl implements UserDAO {
 

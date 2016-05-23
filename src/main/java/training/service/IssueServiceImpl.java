@@ -13,9 +13,6 @@ import training.model.User;
 
 import java.util.List;
 
-
-
-
 @Service
 public class IssueServiceImpl implements IssueService {
 

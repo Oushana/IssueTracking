@@ -10,8 +10,6 @@ import javax.persistence.Query;
 import java.util.List;
 import java.util.Set;
 
-
-
 @Repository
 public class ProjectDAOImpl implements ProjectDAO {
 
@@ -42,7 +40,6 @@ public class ProjectDAOImpl implements ProjectDAO {
         Project p = entityManager.getReference(Project.class, id);
         entityManager.remove(p);
     }
-
 
     @Override
     public Project findOne(long id) {

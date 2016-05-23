@@ -8,8 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-
-
 @Repository
 public class IssueDAOImpl implements IssueDAO {
 
@@ -29,6 +27,7 @@ public class IssueDAOImpl implements IssueDAO {
 
     @Override
     public void delete(int[] ids) {
+
        Issue issue;
         for (int id : ids) {
             issue = entityManager.getReference(Issue.class, id);

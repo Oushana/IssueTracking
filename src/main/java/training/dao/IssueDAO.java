@@ -5,7 +5,6 @@ import training.model.Issue;
 
 import java.util.List;
 
-
 public interface IssueDAO {
 
     void add(Issue issue);

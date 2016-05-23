@@ -9,8 +9,6 @@ import training.model.Project;
 import java.util.List;
 import java.util.Set;
 
-
-
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
