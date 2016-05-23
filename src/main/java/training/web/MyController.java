@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import training.model.User;
 import training.service.IssueService;
 import training.service.ProjectService;
 import training.service.UserService;
@@ -43,6 +45,29 @@ public class MyController {
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUsers(Model model) {
+        model.addAttribute("users", userService.getAllUsers());
+        return "users";
+    }
+
+    @RequestMapping("/user_add_page")
+    public String userAddPage(Model model) {
+        // model.addAttribute("projects", projectService.getAll());
+        return "user_add_page";
+    }
+
+    @RequestMapping(value = "/user/add", method = RequestMethod.POST)
+    public String userAdd(@RequestParam(value="username", required=false) String username,
+                          @RequestParam(value="name", required=false) String name,
+                          @RequestParam(value="surname", required=false) String surname,
+                          @RequestParam(value="email", required=false) String email,
+                          Model model) {
+        //Project project = (projectId != DEFAULT_GROUP_ID) ? projectService.findProject(projectId) : null;
+
+        User user = new User(username, name, surname, email);
+        System.out.println(user.getUsername() + " " + user.getEmail());
+        userService.addUser(user);
+
+        // model.addAttribute("projects", userService.listProjects());
         model.addAttribute("users", userService.getAllUsers());
         return "users";
     }

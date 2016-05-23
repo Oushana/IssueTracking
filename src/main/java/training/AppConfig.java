@@ -10,6 +10,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
@@ -92,8 +93,8 @@ public class AppConfig {
         return resolver;
     }
 
-    //@Bean
-    //public CommonsMultipartResolver multipartResolver() {
-    //   return new CommonsMultipartResolver();
+ //   @Bean(name = "multipartResolver")
+   // public CommonsMultipartResolver multipartResolver() {
+     //  return new CommonsMultipartResolver();
     //}
 }
