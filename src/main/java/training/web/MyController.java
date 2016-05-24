@@ -29,25 +29,28 @@ public class MyController {
 
     @RequestMapping("/")
     public String index(Model model) {
-       // model.addAttribute("projects", projectService.getAll());
+        model.addAttribute("projects", projectService.getAll());
       //  model.addAttribute("users", userService.getAllUsers());
         return "index";
     }
     @RequestMapping(value = "/issues", method = RequestMethod.GET)
     public String listIssues(Model model) {
         model.addAttribute("issues", issueService.getAll());
+        model.addAttribute("projects", projectService.getAll());
         return "issues";
     }
 
     @RequestMapping(value = "/projects", method = RequestMethod.GET)
     public String listProjects(Model model) {
         model.addAttribute("projects", projectService.getAll());
+
         return "projects";
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUsers(Model model) {
         model.addAttribute("users", userService.getAll());
+        model.addAttribute("projects", projectService.getAll());
         return "users";
     }
 
@@ -112,17 +115,15 @@ public class MyController {
       Project project = new Project(title, description, leadId);
       projectService.addProject(project);
 
-        // model.addAttribute("projects", userService.listProjects());
-        model.addAttribute("projects", projectService.getAll());
+      model.addAttribute("projects", projectService.getAll());
         return "projects";
     }
 
     @RequestMapping(value = "/user/delete", method = RequestMethod.POST)
-    public String search(@RequestParam(value = "toDelete[]", required = false) int[] toDelete, Model model) {
+    public String userDelete(@RequestParam(value = "toDelete[]", required = false) int[] toDelete, Model model) {
         if (toDelete != null)
             userService.delete(toDelete);
 
-        //model.addAttribute("groups", contactService.listGroups());
         model.addAttribute("users", userService.getAll());
         return "users";
     }

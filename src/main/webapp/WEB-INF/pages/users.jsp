@@ -8,11 +8,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="container1">
     <h3><a href="/">Users List</a></h3>
 
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid" >
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul id="projectList" class="nav navbar-nav">
@@ -40,7 +40,7 @@
         </div>
     </nav>
 
-    <table class="table table-striped">
+    <table class="table table-striped" >
         <thead>
         <tr>
             <td></td>
@@ -64,6 +64,7 @@
             </tr>
         </c:forEach>
     </table>
+
 </div>
 
 <script>
@@ -71,35 +72,35 @@
 
     $('#add_user').click(function(){
         window.location.href='/user_add_page';
-    })
+    });
 
     $('#add_project').click(function(){
         window.location.href='/project_add_page';
-    })
+    });
 
     $('#add_issue').click(function(){
         window.location.href='/issue_add_page';
-    })
+    });
 
     $('#delete_project').click(function(){
         window.location.href='/#';
-    })
+    });
 
     $('#delete_issue').click(function(){
         window.location.href='/#';
-    })
+    });
 
     $('#issues_list').click(function(){
         window.location.href='/issues';
-    })
+    });
 
     $('#projects_list').click(function(){
         window.location.href='/projects';
-    })
+    });
 
     $('#users_list').click(function(){
         window.location.href='/users';
-    })
+    });
 
     $('#delete_user').click(function(){
         var data = { 'toDelete[]' : []};
@@ -107,8 +108,7 @@
             data['toDelete[]'].push($(this).val());
         });
         $.post("/user/delete", data);
-        window.location.href='/users';
-    })
+    });
 
     $( "li .searchterm" ).click(function() {
         console.log('testing');
