@@ -47,8 +47,12 @@
 <script>
 
     $('#delete_issue').click(function(){
-        window.location.href='/#';
-    })
+        var data = { 'toDelete[]' : []};
+        $(":checked").each(function() {
+            data['toDelete[]'].push($(this).val());
+        });
+        $.post("/issue/delete", data);
+    });
 
 </script>
 

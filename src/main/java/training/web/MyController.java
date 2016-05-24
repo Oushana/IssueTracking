@@ -127,4 +127,22 @@ public class MyController {
         model.addAttribute("users", userService.getAll());
         return "users";
     }
+
+    @RequestMapping(value = "/issue/delete", method = RequestMethod.POST)
+    public String issueDelete(@RequestParam(value = "toDelete[]", required = false) int[] toDelete, Model model) {
+        if (toDelete != null)
+            issueService.delete(toDelete);
+
+        model.addAttribute("issues", issueService.getAll());
+        return "issues";
+    }
+
+    @RequestMapping(value = "/project/delete", method = RequestMethod.POST)
+    public String projectDelete(@RequestParam(value = "toDelete[]", required = false) int[] toDelete, Model model) {
+        if (toDelete != null)
+            projectService.delete(toDelete);
+
+        model.addAttribute("projects", projectService.getAll());
+        return "projects";
+    }
 }

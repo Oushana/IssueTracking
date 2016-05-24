@@ -39,8 +39,13 @@
 <script>
 
     $('#delete_project').click(function(){
-        window.location.href='/#';
-    })
+        var data = { 'toDelete[]' : []};
+        $(":checked").each(function() {
+            data['toDelete[]'].push($(this).val());
+        });
+        $.post("/project/delete", data);
+    });
+
 
 </script>
 
