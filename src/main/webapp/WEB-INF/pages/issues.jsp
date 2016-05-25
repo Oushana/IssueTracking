@@ -11,7 +11,7 @@
 <div class="container">
     <h3><a href="/">Issues List</a></h3>
 
-    <jsp:include page="navigatioBar.jsp" flush="true" />
+    <jsp:include page="navigatioBar.jsp" flush="true"/>
     <button type="button" id="delete_issue" class="btn btn-default navbar-btn">Delete Issue</button>
 
     <table class="table table-striped">
@@ -46,9 +46,9 @@
 
 <script>
 
-    $('#delete_issue').click(function(){
-        var data = { 'toDelete[]' : []};
-        $(":checked").each(function() {
+    $('#delete_issue').click(function () {
+        var data = {'toDelete[]': []};
+        $(":checked").each(function () {
             data['toDelete[]'].push($(this).val());
         });
         $.post("/issue/delete", data);

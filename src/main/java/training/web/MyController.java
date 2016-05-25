@@ -30,7 +30,6 @@ public class MyController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("projects", projectService.getAll());
-      //  model.addAttribute("users", userService.getAllUsers());
         return "index";
     }
     @RequestMapping(value = "/issues", method = RequestMethod.GET)
@@ -66,12 +65,10 @@ public class MyController {
                           @RequestParam(value="surname", required=false) String surname,
                           @RequestParam(value="email", required=false) String email,
                           Model model) {
-        //Project project = (projectId != DEFAULT_GROUP_ID) ? projectService.findProject(projectId) : null;
 
         User user = new User(username, name, surname, email);
         userService.addUser(user);
 
-        // model.addAttribute("projects", userService.listProjects());
         model.addAttribute("users", userService.getAll());
         return "users";
     }
@@ -90,7 +87,6 @@ public class MyController {
                            @RequestParam(value="status", required=false) String status,
                            @RequestParam(value="projectId", required=false) int projectId,
                           Model model) {
-        //Project project = (projectId != DEFAULT_GROUP_ID) ? projectService.findProject(projectId) : null;
 
         Issue issue = new Issue(reporterId, asigneeId, title, description, priority, status, projectId);
         issueService.addIssue(issue);

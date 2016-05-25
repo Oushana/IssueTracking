@@ -12,10 +12,10 @@
 <div class="container">
     <h3><a href="/">Welcome page</a></h3>
 
-    <jsp:include page="navigatioBar.jsp" flush="true" />
+    <jsp:include page="navigatioBar.jsp" flush="true"/>
 
 </div>
-
+<p> Simple issue tracking system</p>
 
 </body>
 </html>

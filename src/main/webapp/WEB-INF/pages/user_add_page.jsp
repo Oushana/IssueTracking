@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <form role="form"  class="form-horizontal" action="/user/add" method="post">
+    <form role="form" class="form-horizontal" action="/user/add" method="post">
         <h3>New user</h3>
 
         <input class="form-control form-user" type="text" name="username" placeholder="UserName">

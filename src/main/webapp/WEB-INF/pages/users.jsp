@@ -11,10 +11,10 @@
 <div class="container" id="container1">
     <h3><a href="/">Users List</a></h3>
 
-    <jsp:include page="navigatioBar.jsp" flush="true" />
+    <jsp:include page="navigatioBar.jsp" flush="true"/>
     <button type="button" id="delete_user" class="btn btn-default navbar-btn">Delete User</button>
 
-    <table class="table table-striped" >
+    <table class="table table-striped">
         <thead>
         <tr>
             <td></td>
@@ -43,9 +43,9 @@
 
 <script>
 
-    $('#delete_user').click(function(){
-        var data = { 'toDelete[]' : []};
-        $(":checked").each(function() {
+    $('#delete_user').click(function () {
+        var data = {'toDelete[]': []};
+        $(":checked").each(function () {
             data['toDelete[]'].push($(this).val());
         });
         $.post("/user/delete", data);

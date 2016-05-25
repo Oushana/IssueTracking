@@ -11,7 +11,7 @@
 <div class="container">
     <h3><a href="/">Projects List</a></h3>
 
-    <jsp:include page="navigatioBar.jsp" flush="true" />
+    <jsp:include page="navigatioBar.jsp" flush="true"/>
     <button type="button" id="delete_project" class="btn btn-default navbar-btn">Delete Project</button>
 
     <table class="table table-striped">
@@ -26,7 +26,8 @@
         </thead>
         <c:forEach items="${projects}" var="project">
             <tr>
-                <td><input type="checkbox" name="toDelete[]" value="${project.p_id}" id="checkbox_${project.p_id}"/></td>
+                <td><input type="checkbox" name="toDelete[]" value="${project.p_id}" id="checkbox_${project.p_id}"/>
+                </td>
                 <td>${project.p_id}</td>
                 <td>${project.title}</td>
                 <td>${project.description}</td>
@@ -38,9 +39,9 @@
 
 <script>
 
-    $('#delete_project').click(function(){
-        var data = { 'toDelete[]' : []};
-        $(":checked").each(function() {
+    $('#delete_project').click(function () {
+        var data = {'toDelete[]': []};
+        $(":checked").each(function () {
             data['toDelete[]'].push($(this).val());
         });
         $.post("/project/delete", data);
