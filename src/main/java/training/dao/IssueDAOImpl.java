@@ -2,6 +2,7 @@ package training.dao;
 
 import org.springframework.stereotype.Repository;
 import training.model.Issue;
+import training.model.Project;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -59,6 +60,21 @@ public class IssueDAOImpl implements IssueDAO {
     public List<Issue> getAll() {
 
         Query  query = entityManager.createQuery("SELECT c FROM Issue c", Issue.class);
+
+        return (List<Issue>) query.getResultList();
+    }
+
+
+    @Override
+    public List<Issue> list(Project project) {
+        Query query;
+
+        if (project != null) {
+            query = entityManager.createQuery("SELECT c FROM Issue c WHERE c.projectId = :project", Issue.class);
+            query.setParameter("project", project);
+        } else {
+            query = entityManager.createQuery("SELECT c FROM Issue c", Issue.class);
+        }
 
         return (List<Issue>) query.getResultList();
     }

@@ -42,7 +42,7 @@ public class ProjectDAOImpl implements ProjectDAO {
     }
 
     @Override
-    public Project findOne(long id) {
+    public Project findOne(int id) {
         return entityManager.getReference(Project.class, id);
 
     }

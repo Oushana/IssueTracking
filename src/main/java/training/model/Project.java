@@ -25,6 +25,7 @@ public class Project {
 
     public Project() {
     }
+
     public Project(String title, String description, int leadId){
         this.title = title;
         this.description = description;

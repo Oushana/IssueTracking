@@ -51,7 +51,10 @@
         $(":checked").each(function () {
             data['toDelete[]'].push($(this).val());
         });
+
         $.post("/issue/delete", data);
+
+        //window.location.href = '/issues';
     });
 
 </script>

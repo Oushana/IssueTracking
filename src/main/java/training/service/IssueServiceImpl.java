@@ -48,4 +48,9 @@ public class IssueServiceImpl implements IssueService {
     public List<Issue> getAll() {
         return issueDAO.getAll();
     }
+
+    @Transactional
+    public List<Issue> list(Project project) {
+        return issueDAO.list(project);
+    }
 }

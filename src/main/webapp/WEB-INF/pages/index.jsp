@@ -15,7 +15,7 @@
     <jsp:include page="navigatioBar.jsp" flush="true"/>
 
 </div>
-<p> Simple issue tracking system</p>
+
 
 </body>
 </html>

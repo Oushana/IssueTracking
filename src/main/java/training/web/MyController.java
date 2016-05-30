@@ -3,6 +3,7 @@ package training.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,8 @@ import training.service.UserService;
 @Controller
 @RequestMapping("/")
 public class MyController {
+
+    static final int DEFAULT_PROJECT_ID = -1;
 
     @Autowired
     private UserService userService;
@@ -106,7 +109,7 @@ public class MyController {
                            @RequestParam(value="description", required=false) String description,
                            @RequestParam(value="leadId", required=false) int leadId,
                            Model model) {
-        //Project project = (projectId != DEFAULT_GROUP_ID) ? projectService.findProject(projectId) : null;
+        //Project project = (projectId != DEFAULT_PROJECT_ID) ? projectService.findProject(projectId) : null;
 
       Project project = new Project(title, description, leadId);
       projectService.addProject(project);
@@ -140,5 +143,16 @@ public class MyController {
 
         model.addAttribute("projects", projectService.getAll());
         return "projects";
+    }
+
+
+    @RequestMapping("/project/{p_id}")
+    public String listGroup(@PathVariable(value = "p_id") int projectId, Model model) {
+        Project project = (projectId != DEFAULT_PROJECT_ID) ? projectService.findProject(projectId) : null;
+
+        model.addAttribute("projects", projectService.getAll());
+        model.addAttribute("currentProject", project);
+        model.addAttribute("issues", issueService.list(project));
+        return "index";
     }
 }
