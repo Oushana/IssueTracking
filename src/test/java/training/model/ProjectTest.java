@@ -1,5 +1,6 @@
 package training.model;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,10 +10,19 @@ import static org.junit.Assert.*;
  */
 public class ProjectTest {
 
+    Project project;
+
+    @Before
+    public void init(){
+    project.setTitle("Project0");
+    project.setDescription("someProject");
+    project.setLeadId(1);
+    }
+
 
     @Test
     public void testGetTitle() throws Exception {
-
+        assertEquals("Project0", project.getTitle());
     }
 
     @Test
@@ -22,7 +32,7 @@ public class ProjectTest {
 
     @Test
     public void testGetDescription() throws Exception {
-
+        assertEquals("someProject", project.getDescription());
     }
 
     @Test
@@ -32,7 +42,7 @@ public class ProjectTest {
 
     @Test
     public void testGetLeadId() throws Exception {
-
+        assertEquals(1, project.getLeadId());
     }
 
     @Test
@@ -40,8 +50,5 @@ public class ProjectTest {
 
     }
 
-    @Test
-    public void testToString() throws Exception {
 
-    }
 }

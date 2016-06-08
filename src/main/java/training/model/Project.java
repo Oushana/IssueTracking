@@ -15,12 +15,12 @@ public class Project {
 
     @Id
     @GeneratedValue
-    private Long p_id;
+    private int p_id;
 
 
     private String title;
     private String description;
-    private Long leadId;
+    private int leadId;
     // private List<User> users = new ArrayList<User>();
 
     public Project() {
@@ -30,11 +30,11 @@ public class Project {
         this.title = projectTitle;
     }
 
-    public Long getP_id() {
+    public int getP_id() {
         return p_id;
     }
 
-    public void setP_id(Long projectId) {
+    public void setP_id(int projectId) {
         this.p_id = projectId;
     }
 
@@ -54,11 +54,11 @@ public class Project {
         this.description = projectDescription;
     }
 
-    public Long getLeadId() {
+    public int getLeadId() {
         return leadId;
     }
 
-    public void setLeadId(Long projectLeadId) {
+    public void setLeadId(int projectLeadId) {
         this.leadId = projectLeadId;
     }
 
