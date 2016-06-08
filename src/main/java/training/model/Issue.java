@@ -23,7 +23,7 @@ public class Issue {
     private String description;
     private String priority;
     private String status;
-    private Long projectId;
+    private int projectId;
 
     // private String issueSummary;
     // private LocalDateTime issueCreationDate;
@@ -95,11 +95,11 @@ public class Issue {
         this.priority = issuePriority;
     }
 
-    public Long getProjectId() {
+    public int getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(Long projectId) {
+    public void setProjectId(int projectId) {
         this.projectId = projectId;
     }
 

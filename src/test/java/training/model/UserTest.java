@@ -55,12 +55,13 @@ public class UserTest {
 
     @Test
     public void testGetEmail() throws Exception {
-
+        assertEquals("aaa@aaa.com", user.getEmail());
     }
 
     @Test
     public void testSetEmail() throws Exception {
-        assertEquals("aaa@aaa.com", user.getEmail());
+        user.setEmail("bbb@bbb.com");
+        assertEquals("bbb@bbb.com", user.getEmail());
     }
 
     @Test
