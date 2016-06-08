@@ -9,15 +9,6 @@ import static org.junit.Assert.*;
  */
 public class ProjectTest {
 
-    @Test
-    public void testGetP_id() throws Exception {
-
-    }
-
-    @Test
-    public void testSetP_id() throws Exception {
-
-    }
 
     @Test
     public void testGetTitle() throws Exception {

@@ -9,15 +9,6 @@ import static org.junit.Assert.*;
  */
 public class IssueTest {
 
-    @Test
-    public void testGetI_id() throws Exception {
-
-    }
-
-    @Test
-    public void testSetI_id() throws Exception {
-
-    }
 
     @Test
     public void testGetReporterId() throws Exception {

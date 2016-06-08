@@ -1,5 +1,6 @@
 package training.model;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,29 +10,32 @@ import static org.junit.Assert.*;
  */
 public class UserTest {
 
-    @Test
-    public void testGetU_id() throws Exception {
+    User user;
 
+    @Before
+    public void init() {
+        user = new User();
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        user.setEmail("aaa@aaa.com");
+        user.setUsername("johnDoe");
     }
 
-    @Test
-    public void testSetU_id() throws Exception {
-
-    }
 
     @Test
     public void testGetFirstName() throws Exception {
-
+        assertEquals("John", user.getFirstName());
     }
 
     @Test
     public void testSetFirstName() throws Exception {
-
+        user.setFirstName("john1");
+        assertEquals("john1", user.getFirstName());
     }
 
     @Test
     public void testGetLastName() throws Exception {
-
+        assertEquals("Doe", user.getLastName());
     }
 
     @Test
@@ -41,7 +45,7 @@ public class UserTest {
 
     @Test
     public void testGetUsername() throws Exception {
-
+        assertEquals("johnDoe", user.getUsername());
     }
 
     @Test
@@ -56,7 +60,7 @@ public class UserTest {
 
     @Test
     public void testSetEmail() throws Exception {
-
+        assertEquals("aaa@aaa.com", user.getEmail());
     }
 
     @Test
