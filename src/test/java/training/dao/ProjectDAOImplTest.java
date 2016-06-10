@@ -88,8 +88,8 @@ public class ProjectDAOImplTest {
         project1.setTitle("TestProject11");
         projectDao.add(project1);
 
-        List<Project> selectedUser = projectDao.getByName(project1.getTitle());
-        assertEquals(selectedUser.get(0).getTitle(), project1.getTitle());
+        List<Project> selectedProject = projectDao.getByName(project1.getTitle());
+        assertEquals(selectedProject.get(0).getTitle(), project1.getTitle());
     }
 
     @Test
@@ -102,9 +102,9 @@ public class ProjectDAOImplTest {
         projectDao.add(project2);
         projectDao.add(project3);
 
-        List<Project> allUsers = projectDao.getAll();
+        List<Project> allProjects = projectDao.getAll();
 
-        assertEquals(currentDBsize + 3, allUsers.size());
+        assertEquals(currentDBsize + 3, allProjects.size());
 
     }
 }

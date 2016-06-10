@@ -39,6 +39,16 @@ public class Issue {
         this.title = issueTitle;
     }
 
+    public Issue(int issueReporterId, String issueTitle, int asigneeId, String description, String status, String priority, int projectId) {
+        this(issueReporterId, issueTitle);
+        this.asigneeId = asigneeId;
+        this.description = description;
+        this.status = status;
+        this.priority = priority;
+        this.projectId = projectId;
+    }
+
+
     public int getI_id() {
         return i_id;
     }
