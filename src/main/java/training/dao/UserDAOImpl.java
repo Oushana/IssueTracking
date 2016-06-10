@@ -21,6 +21,8 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void delete(User user) {
+
+        entityManager.persist(user);
         entityManager.remove(user);
     }
 
@@ -36,6 +38,9 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void delete(int id) {
         User u = entityManager.getReference(User.class, id);
+
+
+
         entityManager.remove(u);
 
     }
